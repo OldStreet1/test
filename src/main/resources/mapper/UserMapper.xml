@@ -1,0 +1,17 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.street.springboot.dao.UserMapper">
+
+    <!--学生登录-->
+    <select id="studentLogin" parameterType="User" resultType="User">
+        select * from user where acc=#{acc} and pwd=#{pwd}
+    </select>
+
+    <!--查找所有用户-->
+    <select id="allUser" parameterType="map" resultType="User">
+        select * from user limit #{pageSize},#{currPage}
+    </select>
+
+</mapper>

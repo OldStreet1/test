@@ -1,0 +1,25 @@
+#SpringBoot核心配置文件
+
+#更改端口号
+server:
+    port: 8088
+    tomcat:
+        uri-encoding: utf-8
+
+spring:
+    thymeleaf:
+        prefix: classpath:/templates/
+    web:
+      resources:
+          static-locations: classpath:/static/,classpath:/templates/
+    datasource:
+        username: JX210111
+        password: 123456
+        #?serverTimezone=UTC解决时区的报错
+        url: jdbc:mysql://localhost:3306/vue?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8
+        driver-class-name: com.mysql.cj.jdbc.Driver
+
+mybatis:
+    type-aliases-package: com.street.springboot.bean
+    mapper-locations: classpath:mapper/*.xml
+

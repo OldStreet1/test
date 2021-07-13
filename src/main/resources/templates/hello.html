@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script th:src="@{/jquery-3.6.0.js}"></script>
+
+</head>
+<body>
+hello sprinboot
+
+<form action="getHello" method="post">
+    用名:<input type="text" name="username"><br>
+    密码:<input type="password" name="password"><br>
+    <input type="button" value="提交">
+</form>
+<input type="button" value="ajax 请求" id="btn">
+</body>
+</html>
+<script type="text/javascript">
+    $("#btn").click(function(){
+        $.ajax({
+            url:'admin/getHello4',
+            data:{username:"aaaa",password:"123"},
+            method:'post',
+            dataType:'json', // 响应数据类型  格式
+            success:function(resp){
+                console.log(resp);
+            }
+
+        })
+    });
+</script>
