@@ -28,7 +28,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
         //注销，开启注销功能
         http.logout().logoutUrl("/");
+        //防止网站工具
+        http.csrf().disable();
 
-        //
+        //开启记住我功能
+        http.rememberMe();
     }
 }
