@@ -26,6 +26,12 @@ public class HelloController {
     @Autowired
     private UserServiceImpl userServiceImpl;
 
+    @RequestMapping("/tologin")
+    public String tologin(){
+
+        return "views/login";
+    }
+
     @RequestMapping("/loginindex")
     public String index(){
 

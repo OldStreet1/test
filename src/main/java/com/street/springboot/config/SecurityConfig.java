@@ -24,9 +24,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 
         //没有权限时会跳到登陆界面
-        http.formLogin();
+        http.formLogin().loginPage("/admin/tologin").loginProcessingUrl("/login");
 
         //注销，开启注销功能
-        http.logout();
+        http.logout().logoutUrl("/");
+
+        //
     }
 }
